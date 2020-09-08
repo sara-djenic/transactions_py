@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send money</title>
+</head>
+<body>
+    {% if role is not none and role == "user" %}
+    <h2>Send money</h2>
+    <form action="/send_money" method="POST">
+        Account number: <input type="number" name="acc_number">
+        Amount: <input type="number" name="amount">
+        <input type="submit" name="submit">
+    </form>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

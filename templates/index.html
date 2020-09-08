@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-banking</title>
+</head>
+<body>
+    <a href="{{ url_for('register')}}">Register</a>
+    <a href="{{ url_for('login') }}">Login</a>    
+
+    {% if role is not none and role == "admin" %}
+    <a href="{{ url_for('add_money') }}"">Add money </a>
+    {% endif %}
+
+    {% if role is not none and role == "user" %}
+    <a href="{{ url_for('send_money') }}">Send money </a>
+    {% endif %}
+
+    {% if user_type is not none and role is not none%}
+	<a href="{{ url_for('logout') }}">Logout </a>
+	{% endif %}
+</body>
+</html>
